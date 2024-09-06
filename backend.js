@@ -1,3 +1,6 @@
+let isG = true ; 
+let isG2 = false ;
+
 var num1 ;
 let num2 ;
 const num3 = 2 ;
@@ -55,7 +58,15 @@ function square(x1,x2)
 }
 function getName(name)
 {
-    return "Mr " + name
+    if(isG)
+    {
+        isG = false ;
+        return "Mr " + name ;
+    }else
+    {
+        return "Ms " + name ;
+    }
+    
 }
 console.log((square(8,8) + 8) - 2);
 console.log(getName("yo"));

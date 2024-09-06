@@ -6,8 +6,8 @@ app.use(cors());
 app.use(express.json());
 app.get("/users",(req:Request , res:Response)=>{
     const accounts:user[] = [
-        {name:"John" , age:16} ,
-        {name:"Alex" , age:18} 
+        {name:"John" , age:16 ,status:false} ,
+        {name:"Alex" , age:18 ,status:false} 
     ]  
     res.status(200).send(JSON.stringify(accounts));
     // 200 = ok
@@ -22,8 +22,8 @@ app.get("/users",(req:Request , res:Response)=>{
 app.get("/users/:id/:username/:sorce",(req:Request , res:Response)=>{
     const {id} = req.params;
     const accounts:user[] = [
-        {name:"John" , age:16} ,
-        {name:"Alex" , age:18} 
+        {name:"John" , age:16 ,status:false} ,
+        {name:"Alex" , age:18 ,status:false} 
     ]  
     // "1" > 1
     const index = Number.parseInt(id);
@@ -34,14 +34,12 @@ app.get("/users/:id/:username/:sorce",(req:Request , res:Response)=>{
     {
         res.status(404);
     }
-    
 })
-
 app.get("/product",(req:Request , res:Response)=>{
     const idx:unknown = req.query.id ;
     const accounts:user[] = [
-        {name:"John" , age:16} ,
-        {name:"Alex" , age:18} 
+        {name:"John" , age:16 ,status:false} ,
+        {name:"Alex" , age:18 ,status:false} 
     ]  
     // "1" > 1
     let index:number ; 
@@ -68,3 +66,4 @@ app.listen(8000 ,()=>
 {
     console.log("server start 8000");
 })
+
